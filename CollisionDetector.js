@@ -1,8 +1,15 @@
+// CollisionDetector.js
+// detect collisions between physics bodies
+// Functions as objects with position and width/height
+// main collision detection function 
+
+// ==============================================
 function CollisionDetector(physicsBodies) {
     const collisions = [];
     const bodiesCount = physicsBodies.length;
 
     for (let i = 0; i < bodiesCount; i++) {
+
         for (let j = i + 1; j < bodiesCount; j++) {
             const bodyA = physicsBodies[i];
             const bodyB = physicsBodies[j];
@@ -16,7 +23,7 @@ function CollisionDetector(physicsBodies) {
     return collisions;
 }
 
-// Simple AABB collision detection
+// collision detection
 function CheckCollision(bodyA, bodyB) {
     return !(
         bodyA.position.x + bodyA.WidthX < bodyB.position.x ||
@@ -26,7 +33,7 @@ function CheckCollision(bodyA, bodyB) {
     );
 }
 
-// Get center position + width/height from DOM element
+// get center position + width/height from DOM element
 function GetWidthPosition(element) {
     const rect = element.getBoundingClientRect();
 
@@ -39,3 +46,4 @@ function GetWidthPosition(element) {
         WidthY: rect.height
     };
 }
+export { CollisionDetector, GetWidthPosition };
