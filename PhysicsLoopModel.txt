@@ -1,0 +1,7 @@
+Physics2DLoop:
+     CollisionDetection()---all element Collision Detection
+     PhysicsBodyGravity() --- all elemnts gravity adding 
+     PhysicsBodyForce()  --apply force (if given )
+     PositionChange()  --change object position (if given to change)
+     --
+     FinalLoopComplete() --apply all properties
